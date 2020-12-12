@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
+    >
+
+        <WebView
+            android:layout_above="@id/llBeritaFooter"
+            android:id="@+id/wvBerita1"
+            android:layout_width="match_parent"
+            android:elevation="20dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:id="@+id/llBeritaFooter"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnBeritaBack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="BACK"
+                android:layout_weight="1"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btnBeritaForward"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="FORWARD"
+                android:layout_weight="1"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+</RelativeLayout>

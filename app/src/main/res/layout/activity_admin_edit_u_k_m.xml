@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/cvAdminHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFF"
+        android:gravity="center">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="3dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EDIT UKM"
+                android:textAlignment="center"
+                android:paddingVertical="8dp"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:layout_marginBottom="10dp"
+                tools:ignore="HardcodedText"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvAdminContent"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        android:elevation="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama UKM"
+                    android:textColor="#000"
+                    android:layout_marginBottom="5dp"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/etAdminEditNamaUKM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nama UKM"
+                    android:background="@drawable/edit_text"
+                    android:paddingLeft="10dp"
+                    android:paddingVertical="8dp"
+                    tools:ignore="HardcodedText,RtlSymmetry" />
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Deskripsi"
+                    android:textColor="#000"
+                    android:layout_marginBottom="5dp"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/etAdminEditDescription"
+                    style="@style/Widget.AppCompat.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text"
+                    android:hint="Deskripsi"
+                    android:paddingLeft="10dp"
+                    android:paddingVertical="8dp"
+                    tools:ignore="HardcodedText,RtlSymmetry" />
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Official Site"
+                    android:textColor="#000"
+                    android:layout_marginBottom="5dp"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/etAdminEditOfficialSite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Official Site"
+                    android:background="@drawable/edit_text"
+                    android:paddingLeft="10dp"
+                    android:paddingVertical="8dp"
+                    tools:ignore="HardcodedText,RtlSymmetry"/>
+
+                <ImageView
+                    android:id="@+id/ivAdminEditImage"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:tooltipText="GAMBAR COVER UKM"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/logo"
+                    android:maxHeight="200dp"/>
+
+                <Button
+                    android:id="@+id/btnAdminEditImage"
+                    android:layout_width="130dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:text="TAMBAH IMAGE"
+                    android:background="@drawable/btn_primary"
+                    android:textColor="#FFF"
+                    tools:ignore="HardcodedText" />
+
+                <ProgressBar
+                    android:id="@+id/pbAdminTambah"
+                    android:layout_width="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="30dp"
+                    android:visibility="invisible"
+                    android:layout_gravity="center"/>
+
+                <Button
+                    android:id="@+id/btnAdminEditSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_primary"
+                    android:textColor="#FFF"
+                    android:text="SIMPAN"
+                    tools:ignore="HardcodedText" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
