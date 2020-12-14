@@ -22,6 +22,15 @@ public interface MyDao {
     @Query("SELECT * FROM Anggota WHERE anggota_id = 1")
     Anggota ambilanggota();
 
+    @Query("SELECT * FROM Anggota WHERE anggota_id = :idnya")
+    Anggota ambilSatuAnggota(Long idnya);
+
+    @Update
+    int updateAnggota(Anggota anggota);
+
+    @Query("SELECT * FROM Anggota WHERE ukm_id_fk = :idnya")
+    List<Anggota> ambilSemuaAnggotaUKM(Long idnya);
+
     @Query("SELECT * FROM UKM")
     List<UKM> ambilSemuaUKM();
 
