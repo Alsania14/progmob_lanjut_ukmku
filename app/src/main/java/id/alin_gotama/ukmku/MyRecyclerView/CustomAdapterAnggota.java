@@ -1,7 +1,9 @@
 package id.alin_gotama.ukmku.MyRecyclerView;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +22,7 @@ import java.util.List;
 
 import id.alin_gotama.ukmku.Anggota_edit;
 import id.alin_gotama.ukmku.R;
+import id.alin_gotama.ukmku.Room.Database.MyDatabase;
 import id.alin_gotama.ukmku.Room.Entity.Anggota;
 import id.alin_gotama.ukmku.UKMActivity;
 
@@ -29,6 +32,7 @@ public class CustomAdapterAnggota extends RecyclerView.Adapter<CustomAdapterAngg
     private Context context;
     private Activity activity;
     private Long ukm_id;
+    private MyDatabase myDatabase;
 
     public CustomAdapterAnggota(List<Anggota> anggotas, Context context,Activity activity,Long ukm_id) {
         CustomAdapterAnggota.anggotas = anggotas;
@@ -46,6 +50,7 @@ public class CustomAdapterAnggota extends RecyclerView.Adapter<CustomAdapterAngg
 
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, final int position) {
+        myDatabase = MyDatabase.createDatabase(context);
         holder.tvNama.setText(anggotas.get(position).getAnggota_nama());
         holder.tvNomor.setText(anggotas.get(position).getAnggota_nomor());
         holder.tvNIM.setText(anggotas.get(position).getAnggota_nim());
@@ -71,7 +76,26 @@ public class CustomAdapterAnggota extends RecyclerView.Adapter<CustomAdapterAngg
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "DELETE", Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("Yakin delete anggota ini ?");
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        myDatabase.myDao().deleteAnggota(anggotas.get(position));
+                        CustomAdapterAnggota.anggotas.remove(position);
+                        CustomAdapterAnggota.this.notifyDataSetChanged();
+                        Toast.makeText(context, "BERHASIL HAPUS ANGGOTA", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                builder.setCancelable(true);
+                builder.create();
+                builder.show();
             }
         });
 

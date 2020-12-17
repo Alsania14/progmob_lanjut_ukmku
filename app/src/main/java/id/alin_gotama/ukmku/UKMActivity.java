@@ -3,6 +3,7 @@ package id.alin_gotama.ukmku;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import id.alin_gotama.ukmku.MyFragment.DetailUKM;
 import id.alin_gotama.ukmku.MyFragment.Fragment_anggota;
 import id.alin_gotama.ukmku.MyFragment.Fragment_berita;
+import id.alin_gotama.ukmku.MyFragment.Fragment_tambah;
 import id.alin_gotama.ukmku.Room.Database.MyDatabase;
 import id.alin_gotama.ukmku.Room.Entity.Anggota;
 import id.alin_gotama.ukmku.Room.Entity.UKM;
@@ -61,6 +63,7 @@ public class UKMActivity extends AppCompatActivity {
                 }
                 else if(item.getItemId() == R.id.itemMenuDaftar){
                     item.setChecked(true);
+                    TambahAnggota();
                 }
                 else if(item.getItemId() == R.id.itemMenuWeb){
                     item.setChecked(true);
@@ -87,6 +90,15 @@ public class UKMActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putLong(Fragment_anggota.UKM_ID,this.ukm_id);
         fragment_anggota.setArguments(bundle);
+        ft.commit();
+    }
+
+    private void TambahAnggota(){
+        Fragment_tambah fragment_tambah = new Fragment_tambah();
+        Bundle bundle = new Bundle();
+        bundle.putLong(Fragment_tambah.UKM_ID,this.ukm_id);
+        fragment_tambah.setArguments(bundle);
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction().replace(R.id.flUKM1,fragment_tambah);
         ft.commit();
     }
 

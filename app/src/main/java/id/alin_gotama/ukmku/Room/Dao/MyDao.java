@@ -1,6 +1,7 @@
 package id.alin_gotama.ukmku.Room.Dao;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
@@ -18,6 +19,9 @@ public interface MyDao {
 
     @Insert
     Long insertAnggota(Anggota anggotas);
+
+    @Delete
+    void deleteAnggota(Anggota anggota);
 
     @Query("SELECT * FROM Anggota WHERE anggota_id = 1")
     Anggota ambilanggota();
