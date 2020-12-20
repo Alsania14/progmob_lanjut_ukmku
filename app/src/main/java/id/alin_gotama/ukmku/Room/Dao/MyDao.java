@@ -47,4 +47,6 @@ public interface MyDao {
     @Query("SELECT * FROM UKM WHERE ukm_nama LIKE :namanya")
     List<UKM> searchEngineUKM(String namanya);
 
+    @Delete
+    void deleteUKM(UKM ukm);
 }
