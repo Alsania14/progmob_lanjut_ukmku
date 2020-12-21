@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/cvAdminHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFF"
+        android:gravity="center">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="3dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DETAIL UKM"
+                android:textAlignment="center"
+                android:paddingVertical="8dp"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:layout_marginBottom="10dp"
+                tools:ignore="HardcodedText"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="20dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginBottom="-10dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentPadding="20dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivAdminDetailUKMCover"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="center"
+            android:src="@drawable/logo"/>
+
+        <TextView
+            android:id="@+id/tvDetailAdminUKMNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            />
+
+            <TextView
+                android:id="@+id/tvDetailAdminUKMDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="lorem"
+                android:textAlignment="center"
+                android:textSize="19sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/tvDetailAdminUKMOfficialSite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_blue_light" />
+
+            <Button
+                android:layout_marginTop="40dp"
+                android:id="@+id/btnDetailAdminUKMEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EDIT UKM"
+                android:background="@drawable/btn_warning"
+                android:textColor="#000"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/btnDetailAdminUKMDelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DELETE UKM"
+                android:background="@drawable/btn_danger"
+                android:textColor="#FFF"
+                tools:ignore="HardcodedText"/>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

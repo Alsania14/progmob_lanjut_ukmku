@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:layout_marginHorizontal="8dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nama Lengkap"
+            android:textColor="#000"
+            android:layout_marginBottom="5dp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/etTambahAnggotaNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama Lengkap"
+            android:background="@drawable/edit_text"
+            android:paddingVertical="8dp"
+            android:paddingLeft="10dp"
+            android:layout_marginBottom="8dp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NIM"
+            android:textColor="#000"
+            tools:ignore="HardcodedText,SmallSp" />
+        <EditText
+            android:id="@+id/etTambahAnggotaNim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="NIM"
+            android:background="@drawable/edit_text"
+            android:paddingVertical="8dp"
+            android:paddingLeft="10dp"
+            android:inputType="number"
+            android:layout_marginBottom="8dp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No Telepon"
+            android:textColor="#000"
+            tools:ignore="HardcodedText,SmallSp" />
+        <EditText
+            android:id="@+id/etTambahAnggotaNomor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="No Telepon"
+            android:background="@drawable/edit_text"
+            android:paddingVertical="8dp"
+            android:paddingLeft="10dp"
+            android:inputType="number"
+            android:layout_marginBottom="8dp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAnggotaTambah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Tambah"
+        android:background="@drawable/btn_primary"
+        android:textColor="#FFF"
+        tools:ignore="HardcodedText"/>
+</LinearLayout>
