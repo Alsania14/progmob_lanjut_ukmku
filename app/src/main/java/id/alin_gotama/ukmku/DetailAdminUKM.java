@@ -1,8 +1,10 @@
 package id.alin_gotama.ukmku;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.Image;
@@ -25,7 +27,7 @@ public class DetailAdminUKM extends AppCompatActivity {
     public static CustomAdapterAdminAdapter customAdapterAdminAdapter;
 
     private TextView tvNama,tvDescription,tvLink;
-    private Button btnEdit;
+    private Button btnEdit,btnDelete;
     private ImageView ivCover;
     private Long Ukm_id;
     private String imagePathandName;
@@ -62,6 +64,16 @@ public class DetailAdminUKM extends AppCompatActivity {
                 startActivityForResult(intent,MY_REQUEST_FOR_EDIT);
             }
         });
+
+        btnDelete = findViewById(R.id.btnDetailAdminUKMDelete);
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDelete();
+            }
+        });
+
+
     }
 
     @Override
@@ -78,10 +90,6 @@ public class DetailAdminUKM extends AppCompatActivity {
                 this.tvLink.setText(ukm.getUkm_link());
                 this.ivCover.setImageBitmap(ReadFromLocalStorage.readImage(this,ukm.getImage_name()));
             }
-            else
-            {
-                Toast.makeText(this, "ZONK", Toast.LENGTH_SHORT).show();
-            }
         }
     }
 
@@ -90,5 +98,28 @@ public class DetailAdminUKM extends AppCompatActivity {
         CustomAdapterAdminAdapter.ukms = myDatabase.myDao().ambilSemuaUKM();
         customAdapterAdminAdapter.notifyDataSetChanged();
         super.onBackPressed();
+    }
+
+    private void alertDelete(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("YAKIN HAPUS UKM INI ?");
+        builder.setMessage("Semua data ukm dan anggota yang mendaftar akan ikut terhapus secara permanen");
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                myDatabase.myDao().deleteUKM(ukm);
+                onBackPressed();
+                Toast.makeText(DetailAdminUKM.this, "HAI", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setCancelable(true);
+        builder.create();
+        builder.show();
     }
 }

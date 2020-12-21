@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AdminEditUKMActivity"></activity>
+        <activity android:name=".Anggota_edit"></activity>
+        <activity android:name=".AdminEditUKMActivity" />
         <activity android:name=".DetailAdminUKM" />
         <activity android:name=".AdminTambahActivity" />
         <activity android:name=".AdminActivity" />

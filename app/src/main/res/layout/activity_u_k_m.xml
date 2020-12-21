@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -21,32 +21,35 @@
             app:cardUseCompatPadding="true"
             app:cardElevation="8dp"
             app:cardCornerRadius="3dp">
+
             <TextView
+                android:id="@+id/tvUKMActivityTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingVertical="8dp"
                 android:text="UKM NAME"
                 android:textAlignment="center"
-                android:paddingVertical="8dp"
-                android:textSize="20sp"
                 android:textColor="#000"
-                android:layout_marginBottom="10dp"
-                tools:ignore="HardcodedText"/>
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
     <FrameLayout
         android:id="@+id/flUKM1"
-        android:layout_above="@id/bnUKM"
+        android:layout_below="@id/cvAdminHeader"
+        android:layout_above="@id/llNavigationFooter"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-20dp"
-        android:layout_marginBottom="-20dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_height="wrap_content">
 
     </FrameLayout>
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/llNavigationFooter"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bnUKM"
             android:background="@drawable/botttomnav"
@@ -54,8 +57,7 @@
             android:layout_height="wrap_content"
             android:outlineAmbientShadowColor="@color/colorPrimaryDark"
             app:itemIconTint="@drawable/itemmenuselector"
-            android:layout_alignParentBottom="true"
             app:itemTextColor="@android:color/darker_gray"
             app:menu="@menu/ukmmenu"/>
-    </RelativeLayout>
-</LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

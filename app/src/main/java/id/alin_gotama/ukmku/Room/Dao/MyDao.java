@@ -1,6 +1,7 @@
 package id.alin_gotama.ukmku.Room.Dao;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
@@ -19,8 +20,20 @@ public interface MyDao {
     @Insert
     Long insertAnggota(Anggota anggotas);
 
+    @Delete
+    void deleteAnggota(Anggota anggota);
+
     @Query("SELECT * FROM Anggota WHERE anggota_id = 1")
     Anggota ambilanggota();
+
+    @Query("SELECT * FROM Anggota WHERE anggota_id = :idnya")
+    Anggota ambilSatuAnggota(Long idnya);
+
+    @Update
+    int updateAnggota(Anggota anggota);
+
+    @Query("SELECT * FROM Anggota WHERE ukm_id_fk = :idnya")
+    List<Anggota> ambilSemuaAnggotaUKM(Long idnya);
 
     @Query("SELECT * FROM UKM")
     List<UKM> ambilSemuaUKM();
@@ -34,4 +47,6 @@ public interface MyDao {
     @Query("SELECT * FROM UKM WHERE ukm_nama LIKE :namanya")
     List<UKM> searchEngineUKM(String namanya);
 
+    @Delete
+    void deleteUKM(UKM ukm);
 }
