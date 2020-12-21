@@ -38,59 +38,90 @@
         android:id="@+id/svAnggotaContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/llAnggotaHeader"
-        >
+        android:layout_below="@id/llAnggotaHeader">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:layout_marginHorizontal="12dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Lengkap"
+                    android:textColor="#000"
+                    tools:ignore="HardcodedText" />
+                <EditText
+                    android:id="@+id/etEditNamaAnggota"
+                    android:layout_marginTop="10dp"
+                    android:hint="Nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text"
+                    android:paddingVertical="8dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginBottom="8dp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nama Anggota"
-                tools:ignore="HardcodedText" />
-            <EditText
-                android:id="@+id/etEditNamaAnggota"
-                android:layout_marginTop="10dp"
-                android:hint="NAMA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:ignore="HardcodedText" />
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NIM"
+                    android:textColor="#000"
+                    tools:ignore="HardcodedText" />
+                <EditText
+                    android:id="@+id/etEditNIMAnggota"
+                    android:layout_marginTop="10dp"
+                    android:hint="NIM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text"
+                    android:paddingVertical="8dp"
+                    android:paddingLeft="10dp"
+                    android:inputType="number"
+                    android:layout_marginBottom="8dp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
 
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="NIM"
-                tools:ignore="HardcodedText" />
-            <EditText
-                android:id="@+id/etEditNIMAnggota"
-                android:layout_marginTop="10dp"
-                android:hint="NIM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:ignore="HardcodedText" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nomor HP"
-                tools:ignore="HardcodedText" />
-            <EditText
-                android:id="@+id/etEditNomorAnggota"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:hint="Nomor HP"
-                android:layout_height="wrap_content"
-                tools:ignore="HardcodedText" />
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nomor HP"
+                    android:textColor="#000"
+                    tools:ignore="HardcodedText" />
+                <EditText
+                    android:id="@+id/etEditNomorAnggota"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:hint="Nomor HP"
+                    android:background="@drawable/edit_text"
+                    android:paddingVertical="8dp"
+                    android:paddingLeft="10dp"
+                    android:inputType="number"
+                    android:layout_marginBottom="8dp"
+                    android:layout_height="wrap_content"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/btnEditAnggotaSubmit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="SAVE"
+                android:background="@drawable/btn_primary"
+                android:textColor="#FFF"
                 tools:ignore="HardcodedText" />
 
         </LinearLayout>

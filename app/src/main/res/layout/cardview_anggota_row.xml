@@ -34,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
+            android:textColor="#000"
             android:text="I Putu Alin Winata Gotama"
             tools:ignore="HardcodedText" />
 
@@ -51,6 +52,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="1805551029"
+            android:textColor="#000"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -67,19 +69,21 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="071928438"
+            android:textColor="#000"
             tools:ignore="HardcodedText" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
             <Button
                 android:id="@+id/btnAnggotaEdit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="EDIT"
+                android:layout_marginRight="4dp"
+                android:background="@drawable/btn_warning"
                 tools:ignore="HardcodedText" />
 
             <Button
@@ -88,6 +92,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="DELETE"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/btn_danger"
+                android:textColor="#FFF"
                 tools:ignore="HardcodedText" />
 
 
