@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -24,6 +25,8 @@ public class DetailAdminUKM extends AppCompatActivity {
     public static final String MODEL = "MODEL";
     private static final int MY_REQUEST_FOR_EDIT = 1;
     public static final String UKM_ID = "UKM_ID";
+
+    @SuppressLint("StaticFieldLeak")
     public static CustomAdapterAdminAdapter customAdapterAdminAdapter;
 
     private TextView tvNama,tvDescription,tvLink;

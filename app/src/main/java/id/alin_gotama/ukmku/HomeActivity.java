@@ -2,7 +2,7 @@ package id.alin_gotama.ukmku;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
+import id.alin_gotama.ukmku.MyPermission.permissionstorage;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -46,6 +46,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         this.cvRepoUKM.setOnClickListener(this);
         this.cvDaftarAnggota.setOnClickListener(this);
+
+        permissionstorage.verifyStoragePermissions(this);
     }
 
 

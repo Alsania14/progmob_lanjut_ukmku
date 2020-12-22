@@ -104,6 +104,9 @@ public class UKMActivity extends AppCompatActivity {
 
     private void Berita(){
         Fragment_berita fragment_berita = new Fragment_berita();
+        Bundle bundle = new Bundle();
+        bundle.putLong(Fragment_berita.UKM_ID,this.ukm_id);
+        fragment_berita.setArguments(bundle);
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction().replace(R.id.flUKM1,fragment_berita);
         ft.commit();
     }
