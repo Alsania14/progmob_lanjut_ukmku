@@ -17,7 +17,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.File;
 
@@ -129,7 +128,6 @@ public class AdminEditUKMActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Toast.makeText(this, String.valueOf(resultCode), Toast.LENGTH_SHORT).show();
         Log.d("reqest code",String.valueOf(requestCode));
         Log.d("result code",String.valueOf(requestCode));
 
@@ -144,18 +142,15 @@ public class AdminEditUKMActivity extends AppCompatActivity implements View.OnCl
 
                 if (imageFile.exists()) {
                     imageStatus = 1;
-                    Toast.makeText(this, "ADA DONG HE", Toast.LENGTH_SHORT).show();
                     bitmap = BitmapFactory.decodeFile(result);
                     ivCover.setImageBitmap(bitmap);
                 } else {
-                    Toast.makeText(this, "TIDAK DAPAT MENGGUNAKAN GAMBAR TERSEBUT !", Toast.LENGTH_LONG).show();
                     imageStatus = 0;
                 }
                 CustomAdapterAdminAdapter.ukms = myDatabase.myDao().ambilSemuaUKM();
 
             }
             else{
-                Toast.makeText(this, "CANCEL", Toast.LENGTH_SHORT).show();
             }
         }
     }

@@ -23,7 +23,6 @@ import android.os.Handler;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -82,9 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 SaveToInternalStorage.saveToInternalStorage(bitmap,imageFile.getName(),"image",getBaseContext());
 
                 Bitmap image = ReadFromLocalStorage.readImage(this,result);
-                Toast.makeText(this, String.valueOf(image.getHeight()), Toast.LENGTH_SHORT).show();
             }else{
-                Toast.makeText(this, "TIDAK DAPAT MENGGUNAKAN GAMBAR TERSEBUT !", Toast.LENGTH_LONG).show();
             }
 
         }

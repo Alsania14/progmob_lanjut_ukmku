@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".HomeActivity"
     android:background="@color/colorPrimaryDark">
 
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:clipToPadding="false"
-            android:paddingBottom="200dp">
+            android:paddingBottom="10dp">
 
     <FrameLayout
         android:id="@+id/flHome"
@@ -49,15 +49,27 @@
         android:layout_width="match_parent"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_height="200dp"
+        android:layout_height="230dp"
         android:background="@drawable/gradient"
-        android:elevation="20dp">
+        android:elevation="20dp"
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_gravity="center_vertical"
             android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
             android:src="@drawable/logo"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UKM KU"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
 
@@ -99,7 +111,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="REPOSITORY UKM"
+                android:text="PENCATATAN ANGGOTA"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"
                 tools:ignore="HardcodedText" />
@@ -107,7 +119,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Atur semua data ukm Universitas Udayana"
+                android:text="Lakukan pencatatan anggota dengan cepat"
                 android:textColor="@android:color/white"
                 tools:ignore="HardcodedText" />
 
@@ -140,7 +152,7 @@
                 android:alpha="0.8"
                 android:background="@android:color/black"
                 android:scaleType="fitXY"
-                android:src="@drawable/pencak_silat" />
+                android:src="@drawable/kedokteran_fak_2" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -154,7 +166,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="PENDAFTARAN ANGGOTA UKM"
+                    android:text="PENCATATAN UKM"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     tools:ignore="HardcodedText" />
@@ -162,7 +174,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Atur semua data ukm Universitas Udayana"
+                    android:text="Atur semua data UKM Universitas Udayana"
                     android:textColor="@android:color/white"
                     tools:ignore="HardcodedText" />
 

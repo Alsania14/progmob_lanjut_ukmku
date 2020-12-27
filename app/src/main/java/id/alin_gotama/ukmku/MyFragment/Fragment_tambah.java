@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -51,13 +50,13 @@ public class Fragment_tambah extends Fragment implements View.OnClickListener {
             StringBuilder builder = new StringBuilder();
             builder.append("");
             if(etNama.getText().toString().matches("")){
-                builder.append("Mohon tambahkan Nama");
+                builder.append("Mohon tambahkan Nama \n");
             }
             if (etNim.getText().toString().matches("")) {
-                builder.append("Mohon Tambahkan Nim");
+                builder.append("Mohon Tambahkan Nim \n");
             }
             if(etNomor.getText().toString().matches("")){
-                builder.append("Mohon Tambahkan Nomor");
+                builder.append("Mohon Tambahkan Nomor \n");
             }
             if(builder.toString().matches("")){
                 Anggota anggota = new Anggota();
@@ -82,6 +81,13 @@ public class Fragment_tambah extends Fragment implements View.OnClickListener {
                 this.etNim.setText("");
                 this.etNama.setText("");
                 this.etNomor.setText("");
+            }else{
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
+                builder1.setTitle("ERROR");
+                builder1.setMessage(builder.toString());
+                builder1.setCancelable(true);
+                builder1.create();
+                builder1.show();
             }
         }
     }

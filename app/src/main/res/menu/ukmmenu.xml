@@ -25,7 +25,7 @@
 
     <item
         android:id="@+id/itemMenuWeb"
-        android:title="BERITA"
+        android:title="OFFICIAL SITE"
         tools:ignore="HardcodedText"
         android:icon="@drawable/berita"
         />

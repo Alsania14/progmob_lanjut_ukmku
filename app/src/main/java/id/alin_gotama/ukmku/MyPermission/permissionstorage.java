@@ -3,7 +3,6 @@ package id.alin_gotama.ukmku.MyPermission;
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
-import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 
@@ -33,7 +32,6 @@ public class permissionstorage {
                     REQUEST_EXTERNAL_STORAGE
             );
         }else{
-            Toast.makeText(activity, "DIIZINKAN", Toast.LENGTH_SHORT).show();
         }
     }
 }

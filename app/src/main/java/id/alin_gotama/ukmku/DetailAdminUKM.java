@@ -14,7 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import id.alin_gotama.ukmku.MyHelper.ReadFromLocalStorage;
 import id.alin_gotama.ukmku.MyRecyclerView.CustomAdapterAdminAdapter;
@@ -85,7 +84,6 @@ public class DetailAdminUKM extends AppCompatActivity {
 
         if(requestCode == MY_REQUEST_FOR_EDIT){
             if(resultCode == RESULT_OK){
-                Toast.makeText(this, "OKE", Toast.LENGTH_SHORT).show();
                 Long ukm_id = data.getLongExtra(UKM_ID,-1);
                 UKM ukm = myDatabase.myDao().ambilSatuUKMid(ukm_id);
                 this.tvNama.setText(ukm.getUkm_nama());
@@ -112,7 +110,6 @@ public class DetailAdminUKM extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 myDatabase.myDao().deleteUKM(ukm);
                 onBackPressed();
-                Toast.makeText(DetailAdminUKM.this, "HAI", Toast.LENGTH_SHORT).show();
             }
         });
         builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {

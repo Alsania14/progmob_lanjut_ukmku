@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import id.alin_gotama.ukmku.MyFragment.Fragment_anggota;
 import id.alin_gotama.ukmku.MyRecyclerView.CustomAdapterAnggota;
@@ -65,7 +64,7 @@ public class Anggota_edit extends AppCompatActivity implements View.OnClickListe
                 this.anggota.setAnggota_nama(etNama.getText().toString());
                 this.anggota.setAnggota_nim(etNim.getText().toString());
                 this.anggota.setAnggota_nomor(etNomor.getText().toString());
-                Toast.makeText(this, String.valueOf(myDatabase.myDao().updateAnggota(anggota)), Toast.LENGTH_SHORT).show();
+                myDatabase.myDao().updateAnggota(this.anggota);
                 CustomAdapterAnggota.anggotas = myDatabase.myDao().ambilSemuaAnggotaUKM(getIntent().getLongExtra(UKM_ID,-1));
                 Fragment_anggota.customAdapterAnggota.notifyDataSetChanged();
                 finish();

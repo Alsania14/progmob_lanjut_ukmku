@@ -42,7 +42,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         int[] image = {R.drawable.pencak_silat2, R.drawable.pencak_silat,R.drawable.logo_ti};
         ImageSlider imageSlider = new ImageSlider(this,iv1,2000,image);
-        ImageSlider imageSlider2 = new ImageSlider(this,iv2,5000,image);
+        int[] image2 = {R.drawable.kedokteran_fak,R.drawable.kedokteran_fak_2,R.drawable.plang_udayana};
+        ImageSlider imageSlider2 = new ImageSlider(this,iv2,5000,image2);
 
         this.cvRepoUKM.setOnClickListener(this);
         this.cvDaftarAnggota.setOnClickListener(this);

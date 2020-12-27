@@ -11,10 +11,8 @@ public class FileDeleter {
         File fdelete = new File(pathAndImage);
         if (fdelete.exists()) {
             if (fdelete.delete()) {
-                Log.d("delete", "sukses");
                 return true;
             } else {
-                Log.d("delete", "gagal");
                 return false;
             }
         }

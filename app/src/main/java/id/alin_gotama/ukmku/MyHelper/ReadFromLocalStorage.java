@@ -9,7 +9,6 @@ import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
